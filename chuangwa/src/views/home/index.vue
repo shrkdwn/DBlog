@@ -1,9 +1,5 @@
 <template>
-  <div class="home-box">
-    <div>
-      <audio controls src="~assets/music/mtgy.mp3"></audio>
-    </div>
-  </div>
+  <div class="home-box"></div>
 </template>
 
 <script lang="ts">
@@ -14,7 +10,7 @@ export default {};
 .home-box {
   padding-top: 70px;
   width: 100%;
-  height: calc(100vh);
+  height: calc(100vh - 70px);
   background-image: url(@/assets/images/home_bg.jpg);
   background-size: cover;
 }
