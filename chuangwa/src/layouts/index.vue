@@ -12,8 +12,8 @@ import Audio from "./components/Audio.vue";
 export default {
   components: {
     Header,
-    Audio,
-  },
+    Audio
+  }
 };
 </script>
 
