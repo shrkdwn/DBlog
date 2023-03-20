@@ -2,18 +2,14 @@
   <div class="header-box">
     <!-- 头部来个左右布局吧！ -->
     <div class="left-box">
-      <span style="color:#bfe5ff">//</span>
-      <span style="color:#fff">断</span>
-      <span style="color:#7a7a7a">桥</span>
-      <!-- <span style="color:#b6cfcb">残</span> -->
-      <!-- <span style="color:#fbfbc7">雪</span> -->
-      <!-- <img src="@/assets/images/xue.png" alt /> -->
-      <!-- <span>//</span> -->
+      <span style="color: #bfe5ff">//</span>
+      <span style="color: #b6cfcb">断</span>
+      <span style="color: #7a7a7a">桥</span>
     </div>
     <div class="right-box">
       <ul class="nav">
         <li class="nav-item" v-for="item in navList" @click="toJump(item.path)">
-          <h1>{{ item.name }}</h1>
+          {{ item.name }}
         </li>
       </ul>
     </div>
@@ -27,11 +23,17 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const navList = ref<Array<{ name: string; path: string }>>([
   { name: "首页", path: "/" },
-  { name: "碎碎念", path: "/info" }
+  { name: "碎碎念", path: "/info" },
+  { name: "听雨", path: "/nature" },
 ]);
 // 函数
 const toJump = (path: string) => {
-  router.push(path);
+  console.log(path);
+  if (path === "/nature") {
+    window.open(path);
+  } else {
+    router.push(path);
+  }
 };
 </script>
 
@@ -58,6 +60,8 @@ const toJump = (path: string) => {
 
       .nav-item {
         margin-left: 20px;
+        color: #fff;
+        font-size: 32px;
         cursor: pointer;
 
         &:first-child {
