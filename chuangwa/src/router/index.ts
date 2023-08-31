@@ -1,21 +1,34 @@
-import { createRouter,createWebHistory,RouteRecordRaw} from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import AppLayout from '@/layouts/index.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component:AppLayout,
-    children:[
+    component: AppLayout,
+    children: [
       {
-        path:'/',
-        name:'home',
-        component:() => import('../views/home/index.vue')
-      }
-    ]
-  }
+        path: '/',
+        name: 'home',
+        component: () => import('../views/home/index.vue'),
+        meta: {
+          title: 'home',
+          layout: true,
+        },
+      },
+      {
+        path: '/china-map',
+        name: 'chinaMap',
+        component: () => import('../views/china-map/index.vue'),
+        meta: {
+          title: 'chinaMap',
+          layout: false,
+        },
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
-  history:createWebHistory(),
-  routes
+  history: createWebHistory(),
+  routes,
 })
 export default router
