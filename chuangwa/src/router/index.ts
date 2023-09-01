@@ -23,6 +23,15 @@ const routes: Array<RouteRecordRaw> = [
           layout: false,
         },
       },
+      {
+        path: '/wang-editor',
+        name: 'wangEditor',
+        component: () => import('../views/wang-editor/index.vue'),
+        meta: {
+          title: 'wangEditor',
+          layout: false,
+        },
+      },
     ],
   },
 ]
